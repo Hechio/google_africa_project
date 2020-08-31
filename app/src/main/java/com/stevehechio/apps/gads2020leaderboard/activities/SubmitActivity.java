@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -66,7 +67,11 @@ public class SubmitActivity extends AppCompatActivity {
     }
     public void showDialog(String firstName,String lastName,String email, String link){
         final Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        Window window = dialog.getWindow();
+        assert window != null;
+        window.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.dialog_response);
 
