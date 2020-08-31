@@ -8,9 +8,9 @@ public class HoursObject {
     @Expose
     private String name;
 
-    @SerializedName("hour")
+    @SerializedName("hours")
     @Expose
-    private int hour;
+    private int hours;
 
     @SerializedName("country")
     @Expose
@@ -25,7 +25,7 @@ public class HoursObject {
     }
 
     public int getHour() {
-        return hour;
+        return hours;
     }
 
     public String getCountry() {

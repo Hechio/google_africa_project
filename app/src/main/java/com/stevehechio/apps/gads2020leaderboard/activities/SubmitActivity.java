@@ -17,9 +17,11 @@ import android.widget.Toast;
 import com.stevehechio.apps.gads2020leaderboard.R;
 import com.stevehechio.apps.gads2020leaderboard.http.LeadersAPI;
 import com.stevehechio.apps.gads2020leaderboard.http.RetrofitClient;
+import com.stevehechio.apps.gads2020leaderboard.models.SubmitObject;
 
 import org.json.JSONObject;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -80,23 +82,25 @@ public class SubmitActivity extends AppCompatActivity {
         LinearLayout linearLayoutFail = dialog.findViewById(R.id.ll_failed);
 
         Button dialogButton = dialog.findViewById(R.id.btn_submit);
-        dialogButton.setOnClickListener(v ->
-                leadersAPI.submitProject(firstName, lastName, email, link,
-                new Callback<JSONObject>() {
-                    @Override
-                    public void onResponse(Call<JSONObject> call, Response<JSONObject> response) {
-                       linearLayoutSuccess.setVisibility(View.VISIBLE);
-                       linearLayoutSubmit.setVisibility(View.GONE);
-                       linearLayoutFail.setVisibility(View.GONE);
-                    }
+        dialogButton.setOnClickListener(v -> {
+           Call<ResponseBody> call = leadersAPI.submitProject(firstName, lastName, email, link);
+           call.enqueue(new Callback<ResponseBody>() {
+               @Override
+               public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                   linearLayoutSuccess.setVisibility(View.VISIBLE);
+                   linearLayoutSubmit.setVisibility(View.GONE);
+                   linearLayoutFail.setVisibility(View.GONE);
+               }
 
-                    @Override
-                    public void onFailure(Call<JSONObject> call, Throwable t) {
-                        linearLayoutSuccess.setVisibility(View.GONE);
-                        linearLayoutSubmit.setVisibility(View.GONE);
-                        linearLayoutFail.setVisibility(View.VISIBLE);
-                    }
-                }));
+               @Override
+               public void onFailure(Call<ResponseBody> call, Throwable t) {
+                   linearLayoutSuccess.setVisibility(View.GONE);
+                   linearLayoutSubmit.setVisibility(View.GONE);
+                   linearLayoutFail.setVisibility(View.VISIBLE);
+               }
+           });
+
+        });
         ImageView imageView = dialog.findViewById(R.id.iv_clear);
         imageView.setOnClickListener(v -> dialog.dismiss());
         dialog.show();
