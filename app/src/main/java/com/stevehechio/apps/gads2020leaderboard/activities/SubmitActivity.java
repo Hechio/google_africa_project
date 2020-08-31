@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.stevehechio.apps.gads2020leaderboard.R;
 import com.stevehechio.apps.gads2020leaderboard.http.LeadersAPI;
 import com.stevehechio.apps.gads2020leaderboard.http.RetrofitClient;
-import com.stevehechio.apps.gads2020leaderboard.models.SubmitObject;
 
 import org.json.JSONObject;
 
