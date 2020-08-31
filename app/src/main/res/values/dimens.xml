@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_x_larger">200dp</dimen>
+    <dimen name="margin_xx_larger">250dp</dimen>
+    <dimen name="margin_xxx_larger">300dp</dimen>
+    <dimen name="margin_xxxx_larger">450dp</dimen>
+    <dimen name="margin_medium">20dp</dimen>
+    <dimen name="padding_medium">30dp</dimen>
+    <dimen name="margin_large">100dp</dimen>
+    <dimen name="padding_large">50dp</dimen>
+    <dimen name="margin_larger">150dp</dimen>
+    <dimen name="margin_s_medium">15dp</dimen>
+    <dimen name="margin_forty">40dp</dimen>
+    <dimen name="text_sixteen">16sp</dimen>
+    <dimen name="text_one_four">14sp</dimen>
+    <dimen name="large">20dp</dimen>
+    <dimen name="medium">10dp</dimen>
+    <dimen name="text_big">20sp</dimen>
+    <dimen name="margin_s_large">80dp</dimen>
+</resources>

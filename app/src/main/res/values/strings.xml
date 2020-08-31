@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GADS 2020 Leaderboard</string>
+    <string name="leader_board">LeaderBoard</string>
+    <string name="submit">Submit</string>
+    <string name="learning_leader">Learning Leaders</string>
+    <string name="skill_iq_leaders">Skill IQ Leaders</string>
+    <string name="gads"><b>Google</b> Africa\n Developer Scholarship</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="project_link">Project on GITHUB (link)</string>
+    <string name="are_you_sure">Are you sure ?</string>
+    <string name="submission_successful">Submission Successful</string>
+    <string name="submission_not_successful">Submission not Successful</string>
+</resources>
